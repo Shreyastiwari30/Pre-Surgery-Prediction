@@ -3,16 +3,13 @@ import joblib
 import numpy as np
 import sklearn
 
-# Load models
 model_suitability = joblib.load("model_suitability.pkl")
 model_mortality = joblib.load("model_mortality.pkl")
 model_recovery = joblib.load("model_recovery.pkl")
 model_stay = joblib.load("model_stay.pkl")
 
-# Page configuration
 st.set_page_config(page_title="Pre-Surgery Analyzer", page_icon="🧠", layout="centered")
 
-# Header
 st.title("🧠 Pre-Surgery Analyzer")
 st.markdown(
     """
@@ -37,7 +34,6 @@ st.markdown("""
 ---
 """)
 
-# Input form
 with st.form("prediction_form"):
     st.subheader("🩺 Patient Medical Information")
 
@@ -75,7 +71,6 @@ if submitted:
 
     st.success("✅ Prediction Complete")
 
-    # Results
     st.markdown("---")
     st.subheader("📊 Prediction Results")
 
